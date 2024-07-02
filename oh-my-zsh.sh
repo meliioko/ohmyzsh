@@ -232,3 +232,12 @@ fi
 
 # set completion colors to be the same as `ls`, after theme has been loaded
 [[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# Custom install
+ mkdir -p /etc/apt/keyrings
+wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc |  gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" |  tee /etc/apt/sources.list.d/gierens.list
+ chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+ apt update
+ apt install -y eza batcat fd-find
+ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install

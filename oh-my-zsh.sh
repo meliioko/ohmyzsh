@@ -239,5 +239,3 @@ echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable
  chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
  apt update
  apt install -y eza batcat fd-find
- git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
